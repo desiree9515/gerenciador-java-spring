@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Tarefas - Página Inicial</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid" style="margin: 15px;">
+			<div class="container">
+				<h1 class="display-4">Gerenciador de Tarefas Clean</h1>
+				<p class="lead">
+					Olá, seja muito bem-vindo(a) ao Gerenciador de Tarefas Clean!
+				</p>
+				<hr class="my-4">
+				<p th:text="${mensagem}"></p>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

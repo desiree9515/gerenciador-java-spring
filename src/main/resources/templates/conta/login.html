@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Tarefas - Login</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="text-center">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #469536; color:#fff;" th:fragment="cabecalho">
+		<a class="navbar-brand" href="#" style="color:#fff;">Gerenciador de Tarefas</a>
+	</nav>
+	<div class="container">
+		<h3 class="display-4">Login</h3>
+		<hr>
+		<form action="/login" method="post" class="form-signin col-md-12 offset-md-4" style="max-width:350px;">
+		<img class="mb-4" src="https://spring.io/img/homepage/icon-spring-cloud.svg" alt="" width="72" height="72">
+			<div class="form-group">
+				<div class="col">
+					<input type="text" class="form-control" placeholder="E-mail"
+						name="email">
+					<small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col">
+					<input type="password" class="form-control" placeholder="Senha"
+						name="senha">
+				</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-outline-success" style="margin:10px;">Entrar</button>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="alert alert-danger" role="alert" th:if="${param.error}">
+						Não for possível fazer o login!
+					</div>
+				<span>Não possui conta? <a href="/registration">Registre-se aqui!</a></span>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
